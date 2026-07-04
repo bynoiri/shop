@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu carrito — noiri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cinta-noiri"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span><span class="c5"></span></div>
+
+<header class="encabezado">
+  <div class="envoltorio encabezado-fila" id="encabezadoFila">
+    <a href="index.html" class="logo">noiri</a>
+    <nav class="nav-principal">
+      <a href="index.html#bolsos">Bolsos</a>
+      <a href="index.html#accesorios">Accesorios</a>
+      <a href="carrito.html" class="icono-carrito">
+        Carrito <span class="badge-carrito" data-cart-badge>0</span>
+      </a>
+    </nav>
+    <button class="btn-menu-movil" id="btnMenuMovil" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<section class="seccion">
+  <div class="envoltorio">
+    <div class="seccion-encabezado">
+      <p class="seccion-eyebrow">Paso final</p>
+      <h2 class="seccion-titulo">Tu carrito</h2>
+    </div>
+
+    <div class="carrito-layout">
+
+      <!-- ============ COLUMNA IZQUIERDA: PRODUCTOS ============ -->
+      <div>
+        <div class="carrito-lista" id="listaCarrito"></div>
+      </div>
+
+      <!-- ============ COLUMNA DERECHA: RESUMEN + ENVÍO ============ -->
+      <div>
+
+        <div class="bloque">
+          <h3>Resumen</h3>
+          <div class="fila-total"><span>Subtotal bolsos</span><span id="subtotalBolsos">$0.00</span></div>
+          <div class="fila-total" id="filaDescuento" style="display:none;">
+            <span>Descuento (<span id="codigoAplicadoTexto"></span>)</span>
+            <span class="valor-descuento" id="valorDescuento">-$0.00</span>
+          </div>
+          <div class="fila-total"><span>Subtotal accesorios</span><span id="subtotalAccesorios">$0.00</span></div>
+          <div class="fila-total"><span>Envío</span><span id="costoEnvioResumen">$0.00</span></div>
+          <div class="fila-total grande"><span>Total</span><span id="totalFinal">$0.00</span></div>
+
+          <div class="grupo-descuento">
+            <input type="text" id="inputDescuento" placeholder="Código de descuento">
+            <button type="button" id="btnAplicarDescuento">Aplicar</button>
+          </div>
+          <p class="msg-descuento" id="msgDescuento"></p>
+          <p class="nota-descuento">El descuento aplica solo sobre bolsos. No aplica a accesorios.</p>
+        </div>
+
+        <div class="bloque">
+          <h3>Método de envío</h3>
+          <div class="metodos-envio">
+            <div class="metodo-envio activo" data-metodo="encomienda">
+              <strong>Encomienda</strong>
+              Recoges en punto de encomienda
+            </div>
+            <div class="metodo-envio" data-metodo="domicilio">
+              <strong>A domicilio</strong>
+              Entrega en tu dirección — $4.50
+            </div>
+          </div>
+
+          <!-- Campos ENCOMIENDA -->
+          <div class="campos-envio visible" id="camposEncomienda">
+            <div class="campo">
+              <label>Departamento</label>
+              <select id="encomiendaDepartamento">
+                <option value="">Selecciona tu departamento</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label>Municipio</label>
+              <input type="text" id="encomiendaMunicipio" placeholder="Ej: Santa Rosa de Lima">
+            </div>
+            <p class="nota-descuento">Te confirmaremos por WhatsApp el punto exacto de encomienda donde puedes recoger tu pedido.</p>
+          </div>
+
+          <!-- Campos DOMICILIO -->
+          <div class="campos-envio" id="camposDomicilio">
+            <div class="campo">
+              <label>Departamento</label>
+              <select id="domicilioDepartamento">
+                <option value="">Selecciona tu departamento</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label>Municipio</label>
+              <input type="text" id="domicilioMunicipio" placeholder="Ej: San Miguel">
+            </div>
+            <div class="campo">
+              <label>Dirección exacta</label>
+              <textarea id="domicilioDireccion" placeholder="Colonia, urbanización o residencial, número de casa, punto de referencia dentro de la zona"></textarea>
+            </div>
+            <div class="campo">
+              <label>Punto de referencia</label>
+              <input type="text" id="domicilioReferencia" placeholder="Ej: frente a la iglesia, casa de portón negro">
+            </div>
+            <div class="campo">
+              <label>Teléfono para la entrega</label>
+              <input type="tel" id="domicilioTelefono" placeholder="Número donde te puede contactar el motorista">
+            </div>
+          </div>
+        </div>
+
+        <div class="bloque">
+          <h3>Tus datos</h3>
+          <div class="campo">
+            <label>Nombre completo</label>
+            <input type="text" id="clienteNombre" placeholder="Tu nombre">
+          </div>
+          <div class="campo">
+            <label>Teléfono de contacto</label>
+            <input type="tel" id="clienteTelefono" placeholder="Tu número de WhatsApp">
+          </div>
+
+          <button class="btn-whatsapp" id="btnEnviarPedido">Enviar pedido por WhatsApp</button>
+          <p class="aviso-form" id="avisoForm"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="envoltorio footer-fila">
+    <div>
+      <div class="footer-logo">noiri</div>
+      <p>Bolsos diseñados con identidad propia. Pedidos personalizados por WhatsApp, envíos a todo El Salvador.</p>
+    </div>
+  </div>
+  <p class="footer-copy">© <span id="anio"></span> noiri. Todos los derechos reservados.</p>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/common.js"></script>
+<script src="js/carrito.js"></script>
+<script>document.getElementById("anio").textContent = new Date().getFullYear();</script>
+</body>
+</html>
