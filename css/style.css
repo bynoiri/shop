@@ -179,7 +179,7 @@ button { font-family: inherit; cursor: pointer; }
   max-width: 420px;
   margin: 0 auto 30px;
   font-size: 16px;
-  color: var(--rosado);
+  color: var(--negro);
   text-align: center;
 }
 .btn-vino {
@@ -200,7 +200,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: 30px;
   font-size: 13px;
   letter-spacing: 0.4px;
-  color: var(--rosado);
+  color: var(--negro);
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
