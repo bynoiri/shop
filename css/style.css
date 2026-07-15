@@ -154,7 +154,7 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: center;
   text-align: center;
   background:
-    radial-gradient(ellipse at center, rgba(244,236,230,0.00) 0%, rgba(244,236,230,0.00) 35%, rgba(244,236,230,0.00) 60%, rgba(244,236,230,0) 78%),
+    radial-gradient(ellipse at center, rgba(244,236,230,0.06) 0%, rgba(244,236,230,0.45) 35%, rgba(244,236,230,0.15) 60%, rgba(244,236,230,0) 78%),
     var(--beige) url("../images/hero.webp") center center/cover no-repeat;
 }
 .hero-contenido {
