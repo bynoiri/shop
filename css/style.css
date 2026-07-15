@@ -184,9 +184,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .btn-vino {
   display: inline-block;
-  background: var(--rosado);
+  background: var(--vino);
   color: var(--beige);
-  border: 1px solid var(--rosado);
+  border: 1px solid var(--vino);
   padding: 17px 36px;
   font-size: 14px;
   letter-spacing: 2px;
@@ -195,7 +195,7 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: var(--radio);
   transition: background var(--transicion), color var(--transicion), border-color var(--transicion);
 }
-.btn-vino:hover { background: var(--vino); border-color: var(--vino); color: var(--beige); }
+.btn-vino:hover { background: var(--rosado); border-color: var(--rosado); color: var(--beige); }
 .hero-confianza {
   margin-top: 30px;
   font-size: 13px;
